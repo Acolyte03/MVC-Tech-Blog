@@ -1,6 +1,6 @@
+
 const router = require("express").Router();
-const { BlogPost, User, Comment } = require("../models");
-const withAuth = require("../utils/auth");
+const { BlogPost, User, Comment } = require("../Models");
 router.get("/", async (req, res) => 
 {
   try 

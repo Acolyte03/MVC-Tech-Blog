@@ -1,3 +1,4 @@
+
 async function newCommentHandler(event) 
 {
   event.preventDefault();

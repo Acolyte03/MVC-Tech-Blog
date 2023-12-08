@@ -1,7 +1,6 @@
-const router = require("express").Router();
-const { BlogPost } = require("../../models");
-const withAuth = require("../../utils/auth");
 
+const router = require("express").Router();
+const { BlogPost } = require("../../../Models");
 router.post("/", withAuth, async (req, res) => 
 {
   console.log(req.body);
@@ -56,7 +55,6 @@ router.delete("/:id", withAuth, async (req, res) =>
         id: req.params.id,
       },
     });
-
     if (!blogPostData) 
     {
       res.status(404).json({ message: "No blog post found with this id!" });
@@ -69,6 +67,4 @@ router.delete("/:id", withAuth, async (req, res) =>
     res.status(500).json(err);
   }
 });
-
-// Exports
 module.exports = router;
